@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.aikan.model.enuns.Especie;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -42,12 +44,13 @@ public class Paciente implements Serializable {
 
 	}
 
-	public Paciente(Long cdPaciente, String nmPaciente, String raca, Double peso, Date dtNascimento, Tutor tutor) {
+	public Paciente(Long cdPaciente, String nmPaciente, String raca, Double peso, Date dtNascimento, Especie especie, Tutor tutor) {
 		this.cdPaciente = cdPaciente;
 		this.nmPaciente = nmPaciente;
 		this.raca = raca;
 		this.peso = peso;
 		this.dtNascimento = dtNascimento;
+		this.especie = (especie == null) ? null : especie.getCod();
 		this.tutor = tutor;
 
 	}
